@@ -14,7 +14,11 @@ it returns the following message in `JSON` format:
 }
 ```
 
-The implementation follows the assigned task as explicitly as possible, returning the `JSON`-formatted greeting only if all of the conditions are met:
+The implementation follows the assigned task as explicitly as possible, 
+returning the `JSON`-formatted greeting **only** if all of the conditions are met:
 * `POST`
 * contains payload
 * to the route `/hello`.
+
+Requests to the `/hello` but those not `POST` or lacking the payload are returned with the response
+ `204 No Content`.
