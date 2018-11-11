@@ -13,3 +13,8 @@ it returns the following message in `JSON` format:
     "message": "Thanks for your valuable payload"
 }
 ```
+
+The implementation follows the assigned task as explicitly as possible, returning the `JSON`-formatted greeting only if all of the conditions are met:
+* `POST`
+* contains payload
+* to the route `/hello`.
