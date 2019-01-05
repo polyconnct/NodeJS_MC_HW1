@@ -23,4 +23,4 @@ returning the `JSON`-formatted greeting **only** if all of the conditions are me
 Requests to the `/hello` but those not `POST` or lacking the payload are returned with the response
  `204 No Content`.
 
-Added multi-core support using ```cluster``` module as per Homework #6 Assignment.
+Added multi-core support using [Cluster](https://nodejs.org/docs/latest-v8.x/api/cluster.html) module as per **Homework #6 Assignment**.
