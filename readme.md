@@ -1,6 +1,6 @@
-[Node.js Master Class](https://pirple.thinkific.com/courses/the-nodejs-master-class)
+[NodeJS Master Class](https://pirple.thinkific.com/courses/the-nodejs-master-class)
 ---
-#### Homework Assignment #1
+#### Homework Assignment #1, #6
 
 A simple "Hello World" API:
 
@@ -14,7 +14,7 @@ it returns the following message in `JSON` format:
 }
 ```
 
-The implementation follows the assigned task as explicitly as possible, 
+The implementation follows the assigned task as explicitly as possible,
 returning the `JSON`-formatted greeting **only** if all of the conditions are met:
 * `POST`
 * contains payload
@@ -22,3 +22,5 @@ returning the `JSON`-formatted greeting **only** if all of the conditions are me
 
 Requests to the `/hello` but those not `POST` or lacking the payload are returned with the response
  `204 No Content`.
+
+Added multi-core support using ```cluster``` module as per Homework #6 Assignment.
