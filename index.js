@@ -11,6 +11,9 @@ const http = require('http');
 const url = require('url');
 const stringDecoder = require('string_decoder').StringDecoder;
 
+const cluster = require('cluster');
+const os = require('os');
+
 function serverInit(req, res) {
   // Get te URL and parse it
   const parsedUrl = url.parse(req.url, true);
@@ -85,7 +88,14 @@ const httpServer = http.createServer((req, res) => {
   serverInit(req, res);
 });
 
-// Start the server and have it listen on port 8000
-httpServer.listen(8000, function() {
-  console.log('The server is listening on port 8000');
-});
+if (cluster.isMaster) {
+  // Fork the process
+    for(let i = 0; i < os.cpus().length; i++) {
+      cluster.fork();
+    }
+} else {  
+  // Start the server and have it listen on port 8000
+  httpServer.listen(8000, function() {
+    console.log('The server is listening on port 8000');
+  });
+}
